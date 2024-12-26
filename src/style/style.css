@@ -1,0 +1,522 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+.name {
+    display: flex;
+    gap: 12px 18px;
+    align-items: center;
+}
+
+.name span {
+    padding: 2px 5px;
+    background-color: #3B88C3;
+    border-radius: 5px;
+    color: #fff;
+}
+
+.name p {
+    font-size: 18px;
+}
+
+.icons-menu {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.icons-menu i {
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.notion {
+    display: flex;
+    gap: 10px;
+    padding: 8px;
+    border: 1px solid #C4C4C2;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.bg {
+    background-image: url(../img/bg.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 400px;
+    margin-bottom: 80px;
+    position: relative;
+    z-index: -1;
+}
+
+.icon {
+    top: 52%;
+    left: 32%;
+    transform: translate(-50%, -50%);
+    font-size: 80px;
+    position: absolute;
+    z-index: 1;
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    width: 40%;
+    gap: 20px;
+}
+
+.title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.title span {
+    padding: 5px 10px;
+    background-color: #3B88C3;
+    border-radius: 5px;
+    color: #fff;
+}
+
+.description {
+    margin-left: 10px;
+    position: relative;
+}
+
+.description p {
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 25px;
+}
+
+.description::after {
+    content: '';
+    position: absolute;
+    display: block;
+    top: 0;
+    left: -10px;
+    width: 3px;
+    height: 100%;
+    background-color: #000;
+}
+
+
+.academic {
+    display: flex;
+    margin-right: auto;
+}
+
+.academic-desc {
+    text-align: center;
+}
+
+#container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: 500px;
+}
+
+.accordion {
+    background-color: transparent;
+    padding: 20px 20px 20px 0;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.acordion-header {
+    border: none;
+    width: 100%;
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.acordion-header span {
+    font-size: 30px;
+    max-width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.acordion-header i {
+    font-size: 18px;
+    margin-right: 10px;
+}
+
+.acordion-body {
+    margin-top: 20px;
+    max-height: 0;
+    opacity: 0;
+    padding: 0 10px;
+    transition: max-height 0.3s ease-out, opacity 0.3s ease-out;
+    color: #444;
+    font-size: 14px;
+    overflow: hidden;
+    transition: opacity 0.5s ease-out;
+}
+
+.acordion-body h3 li {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.acordion-body h4 li {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.acordion-body a {
+    text-decoration: none;
+    color: #5382c7;
+    font-size: 20px;
+}
+
+.acordion-body p {
+    margin-top: 10px;
+    margin-bottom: 30px;
+    font-size: 16px;
+}
+
+.acordion-body.active {
+    max-height: 600px;
+    opacity: 1;
+    padding: 10px;
+}
+
+.arrow {
+    transition: transform 0.5s ease-out;
+}
+
+.accordion:has(.active) .arrow {
+    transform: rotate(90deg);
+}
+
+.jobs {
+    padding: 20px;
+    text-align: start;
+}
+
+.jobs h1 {
+    margin-bottom: 20px;
+    font-size: 32px;
+}
+
+.container-jobs {
+    display: flex;
+    flex-direction: column;
+}
+
+.job-content {
+    position: relative;
+    border-radius: 10px;
+    width: 346px;
+    border: 1px solid #C4C4C2;
+    cursor: pointer;
+}
+
+.jobs-bg img {
+    border-radius: 10px 10px 0 0;
+    width: 100%;
+    display: block;
+}
+
+.jobs-desc {
+    padding: 10px;
+    display: flex;
+    gap: 10px;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+.modal {
+    background-color: #f1f1f1;
+    position: absolute;
+    display: none;
+    flex-direction: column;
+    width: 850px;
+    z-index: 2;
+}
+
+.modal-header {
+    width: 100%;
+    height: 150px;
+    margin-bottom: 100px;
+    background-color: #f9bf52;
+    position: relative;
+}
+
+.logo {
+    width: 100px;
+    position: absolute;
+    top: 6%;
+    left: 5%;
+}
+
+.modal-desc,
+.modal-img,
+.modal-title,
+.projeto-desc,
+.processo-design {
+    gap: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    padding: 0 74px;
+    margin-bottom: 20px;
+}
+
+.modal-desc h1 {
+    margin-bottom: 20px;
+}
+
+.modal-desc-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-bottom: 20px;
+}
+
+.desc-container1,
+.desc-container2 {
+    display: flex;
+    gap: 20px;
+}
+
+.container-1 p {
+    color: #b9b9b9;
+    font-size: 14px;
+}
+
+.link1,
+.link2,
+.link3 {
+    width: 120px;
+    padding: 2px;
+    border-radius: 2px;
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.link1 {
+    background-color: #69314c;
+}
+
+.link2 {
+    background-color: #854c1d;
+}
+
+.link3 {
+    background-color: #5a5a5a;
+}
+
+.modal-title p {
+    margin-left: 20px;
+}
+
+.modal-title p::before {
+    content: "";
+    position: absolute;
+    width: 5px;
+    height: 20px;
+    border-radius: 1px;
+    background-color: #000;
+    margin-left: -20px;
+}
+
+.projeto-desc h2,
+.processo-design h2 {
+    margin-top: 20px;
+}
+
+.projeto-desc p {
+    margin-bottom: 20px;
+}
+
+.link {
+    margin-right: 20px;
+}
+
+.processo-design-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    margin-top: 10px;
+    gap: 20px;
+}
+
+.processo-design-container h3 {
+    color: #5b83c2;
+    margin-bottom: 10px;
+}
+
+.modal-footer {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    margin-top: 20px;
+    padding: 0 74px;
+}
+
+.modal-footer img {
+    width: 250px;
+}
+
+.links-footer {
+    margin-top: 20px;
+    display: flex;
+    gap: 40px;
+}
+
+.footer{
+    display: flex;
+    margin: 0 auto;
+    width: 40%;
+    gap: 20px;
+    align-items: center;
+}
+
+.footer img{
+    margin-top: 30px;
+    width: 250px;
+}
+.footer-container{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 30px;
+    margin-left: 20px;
+    width: 100%;
+}
+
+
+@media (max-width: 800px) {
+    .main {
+        width: 60%;
+    }
+
+    .academic {
+        flex-direction: column;
+    }
+
+    .jobs {
+        padding: 10px;
+    }
+
+    .container-jobs {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .job-content {
+        width: 90%;
+    }
+
+    .modal {
+        width: 90%;
+    }
+
+    .footer {
+        width: 90%;
+    }
+}
+
+
+@media (max-width: 700px) {
+    .main {
+        width: 80%;
+    }
+
+    .description p {
+        font-size: 16px;
+    }
+
+    .academic-desc p {
+        font-size: 14px;
+    }
+
+    .modal-desc, .modal-title {
+        padding: 0 20px;
+    }
+
+    .modal-footer img {
+        width: 200px;
+    }
+
+    .footer img {
+        width: 200px;
+    }
+}
+
+@media (max-width: 600px) {
+    .main {
+        width: 90%;
+    }
+
+    .jobs h1 {
+        font-size: 28px;
+    }
+
+    .academic-desc p {
+        font-size: 12px;
+    }
+
+    .modal-desc, .modal-title {
+        padding: 0 10px;
+    }
+
+    .modal-footer {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .links-footer {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+@media (max-width: 500px) {
+    .header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .icons-menu {
+        flex-wrap: wrap;
+    }
+
+    .academic h3, .academic h4 {
+        font-size: 18px;
+    }
+
+    .jobs h1 {
+        font-size: 24px;
+    }
+
+    .footer-container {
+        text-align: center;
+    }
+
+    .footer img {
+        width: 150px;
+    }
+}
